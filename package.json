@@ -1,0 +1,25 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.4.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-radio-group": "^3.0.3",
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.4.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.81.1",
+    "wow.js": "^1.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0"
+  }
+}

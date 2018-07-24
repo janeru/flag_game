@@ -1,0 +1,170 @@
+*{
+  font-family: Lemon;
+}
+body{
+  background-color: #b9af394a;
+  width: 100%;
+  padding:0;
+  margin:0;
+  
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+.title {
+  background: url('./planet.jpg');
+  height: 150px;
+  align-items: center;
+  width:100%;
+  margin:0;
+  padding:20px;
+
+}
+.title h1{
+  margin: 0;
+  text-shadow: 2px 2px 6px rgb(129, 87, 39);
+  text-align: center;
+  color:rgba(240, 238, 233, 0.878)
+}
+
+
+.flex-container{
+  
+  height:10vh;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding:20px;
+  line-height: 1.5rem;
+  letter-spacing: 1.5px;
+}
+.radioItem{
+display: flex;
+margin:10px;
+}
+.name{
+  display: flex;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  margin:10px;
+  flex-wrap: wrap;
+}
+
+
+.col-3{
+  width:calc(100% * 3 /12);
+}
+.col-4{
+  width:calc(100% * 4 /12);
+}
+.col-6{
+  width:calc(100% * 6 /12);
+}
+
+.countryFlagImg{
+  margin:20px;
+  text-align:center;
+}
+
+.chooseButton{
+    box-shadow: 3px 2px #03a9f4a3;
+    margin:20px;
+    color:rgb(43, 137, 226)  
+}
+.chooseButtonNext{
+  color:rgb(226, 116, 43)  
+}
+.MuiButton-label-2{
+  color: #e9145b;
+  font-style: italic;
+  font-weight: bold;  
+  font-size: 20px;
+  
+
+}
+.MuiTouchRipple-root-28{
+  background: #2f597a4d;
+}
+
+.score{
+
+  padding: 1.1rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  color: rgb(140, 127, 255);
+}
+.win {
+  text-align: center;
+  margin: 10px;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  color: rgba(38, 204, 102, 0.849);
+  flex-wrap: wrap;
+  line-height: 1.5;
+  
+
+}
+@media screen and (max-width:700px){
+  [class^="col-"]{
+  width:60%;
+  padding:20px
+}
+.title{
+  width:100%;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+}
+.mui-panel{
+  margin:0
+}
+
+}
+@media screen and (max-width:500px){
+  [class^="col-"]{
+  width:100%;
+  padding:10px;
+}
+.title{
+  width:100%;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+}
+.radioItem{
+  display: block;
+}
+.choiceFlag{
+  display: block;
+  text-align: center;
+}
+.name{
+  flex-wrap: wrap;
+}
+}
+
+.countryname:hover {
+  color: rgba(77, 50, 28, 0.89);
+}
+
+.inNextCountryFlagImg{
+  text-align: center;
+ 
+}
+footer {
+  padding:10px;
+  line-height: -10px;
+  background-color: rgba(145, 193, 207, 0.883);
+  position:fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  height:60px;
+  }
+
