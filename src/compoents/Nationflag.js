@@ -1,7 +1,6 @@
 import React from 'react';
 
 const BottomImg = (props) =>
-
     (
         <div className="bottom">
 
