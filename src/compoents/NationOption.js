@@ -10,8 +10,6 @@ const styles = theme => ({
     },
 });
 
-
-
 const NationOption = class extends React.Component {
 
     constructor(props) {

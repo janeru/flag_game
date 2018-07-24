@@ -11,7 +11,6 @@ const BottomImg = (props) =>
                 />
             </div>
         </div>
-
     )
 
 
