@@ -158,12 +158,12 @@ margin:10px;
 footer {
   padding:10px;
   line-height: -10px;
-  background-color: rgba(145, 193, 207, 0.883);
+  background:url('https://picsum.photos/2500/500?image=733');
   position:fixed;
   bottom: 0px;
   width: 100%;
   text-align: center;
   font-size: 18px;
-  height:60px;
+  height:70px;
   }
 
