@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 ## initial commit
 
 
-=======
 # Janeru react practice with guess flag game
 
 
@@ -31,4 +30,4 @@ Click the bottom to guess the country in the photo.
 If you guess right ans, and you will get one point and go to the next.
 When you accumulate your points to 10, and the game will over. 
 ```
->>>>>>> a610fd6cf2466d54ae8fb6c5a07ca687dd0e2ba9
+
