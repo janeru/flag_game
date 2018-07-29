@@ -6,6 +6,7 @@ const Header = () => (
                 <h1>Guess the flag</h1>
             </div>
         </div>
-    </header>)
+    </header>
+)
 
 export default Header;
