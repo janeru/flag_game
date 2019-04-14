@@ -9,7 +9,7 @@ const styles = theme => ({
         margin: theme.spacing.unit,
     },
 });
-
+let ColorChange = ['black', 'red', 'green']
 const NationOption = class extends React.Component {
 
     constructor(props) {
@@ -23,11 +23,11 @@ const NationOption = class extends React.Component {
             showPhotoNum: 0,
             guessRightAns: NaN,
             userGuess: NaN,
-
             userScore: 0,
             rightAns: NaN,
             disableChoose: false,
-            ansShow: false
+            ansShow: false,
+
         }
 
     }
@@ -63,7 +63,6 @@ const NationOption = class extends React.Component {
             showPhotoNum: initPhotoNum,
             randomCountry: randCountry,
             countryFlag: nationFlag,
-
             userGuess: NaN,
             guessRightAns: 0,
             rightAns: NaN
@@ -73,7 +72,9 @@ const NationOption = class extends React.Component {
 
 
 
-    checkWin = (name, radioNowId) => () => {
+    checkWin = (name, radioNowId) => (e) => {
+        console.log(e.target.parentElement)
+
         this.setState({
             disableChoose: false
         })
@@ -81,28 +82,32 @@ const NationOption = class extends React.Component {
         const ansRight = randomCountry[showPhotoNum]
         this.setState({ rightAns: ansRight, selectedValue: radioNowId })
         localStorage.setItem("selectedValue", radioNowId)
+        let rightNum
         if (ansRight === name) {
-
+            rightNum = 1
             this.setState({
                 userGuess: name,
-                guessRightAns: 1
+                guessRightAns: 1,
+
             })
 
         } else {
-
+            rightNum = 0
             this.setState({
                 guessRightAns: 0,
-                userGuess: name
+                userGuess: name,
+
             })
         }
-
+        this.guess(rightNum)
 
     }
 
-    guess = (num) => (e) => {
-        console.log(e.target)
+    guess = (rightNum) => {
 
-        const { userScore } = this.state
+        let num = rightNum
+        console.log(num)
+        let userScore = this.state.userScore
         num === 1 ? this.setState({
 
             userScore: userScore + 1
@@ -112,6 +117,8 @@ const NationOption = class extends React.Component {
             ansShow: true
 
         })
+
+        console.log(userScore)
     }
 
 
@@ -150,15 +157,26 @@ const NationOption = class extends React.Component {
                                     (
 
                                         <div className="col-3">
-                                            <div className="countryname">
+                                            <div className="countryname" style={{
+                                                'color': ansShow ? name === this.state.rightAns ? ColorChange[2] :
+                                                    ColorChange[1] : ColorChange[0]
+                                            }}>
 
-                                                <Radio disabled={ansShow ? true : false}
-                                                    key={name} style={{ width: 30, height: 30, backgroundColor: '#7cad3c6e' }}
+                                                <Radio
+                                                    id={name}
+                                                    disabled={ansShow ? true : false}
+                                                    key={name} style={{
+                                                        width: 30, height: 30, backgroundColor: '#7cad3c6e',
+
+                                                    }
+                                                    }
                                                     name="country"
                                                     value={this.state.selectedValue}
                                                     onClick={this.checkWin(name, i)}
-                                                    checked={selectedValue === i} />
-                                                <label>{name}</label>
+                                                    checked={selectedValue === i}
+
+                                                />
+                                                <label for={name} >{name}</label>
 
                                             </div>
                                         </div>
@@ -168,30 +186,21 @@ const NationOption = class extends React.Component {
                             </div>
 
                             <div className="choiceFlag">
-                                {ansShow ? ('') :
-                                    <Button disabled={
-                                        this.state.disableChoose
-                                    }
-                                        variant="contained" color="secondary" className="chooseButton"
-                                        onClick={this.guess(guessRightAns)}
-                                    >
-                                        Choose
-                                    </Button>
 
-                                }
                                 {ansShow ?
                                     guessRightAns === 1 ?
-                                        <div className="name">
-                                            <div className="col-6">
-                                                <div className="countryname">
-                                                    Ans.:
-                                                </div>
-                                                <br />
-                                                <div className="countryname">{this.state.rightAns}</div>
+                                        <div className="name" style={{
+                                            'position': 'relative',
+                                            'textAlign': 'center'
+                                        }}>
 
-                                            </div>
-                                            <div className="col-6">
-                                                <div className="countryname">
+                                            <div>
+                                                <div className="countryname" style={{
+                                                    display: 'flex'
+                                                }}>
+                                                    <div>
+                                                        Guess Right!
+                                                  </div>
                                                     <Button variant="contained" color="secondary" className="chooseButtonNext"
                                                         onClick={this.getRandomCountry}
                                                     >Next
@@ -204,20 +213,14 @@ const NationOption = class extends React.Component {
                                         </div> :
                                         <div>
                                             <div className="name">
-                                                <div className="col-4"> <div className="countryname" >Incorrect Ans.:</div>
-                                                    <br />
-                                                    {userGuess === NaN ? ('') :
-                                                        <div className="countryname" style={{ color: 'red' }}>{userGuess}</div>
-                                                    }
-                                                </div>
-                                                <div className="col-4">   <div className="countryname" >Ans.:</div>
-                                                    <br />
-                                                    {rightAns === NaN ? ('') :
-                                                        <div className="countryname" style={{ color: 'green' }}>{rightAns}</div>
-                                                    }
-                                                </div>
-                                                <div className="col-4">
-                                                    <div className="countryname">
+
+                                                <div>
+                                                    <div className="countryname" style={{
+                                                        display: 'flex'
+                                                    }}>
+                                                        <div>
+                                                            Guess Wrong!
+                                                  </div>
                                                         <Button variant="contained" color="secondary" className="chooseButton"
                                                             onClick={this.getRandomCountry}
                                                         >
