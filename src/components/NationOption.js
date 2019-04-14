@@ -249,7 +249,11 @@ const NationOption = class extends React.Component {
                     </div>
                 ) :
                     <div className="win">
-                        Congratulations!</div>
+                        Congratulations!
+                        <Button variant="contained" color="secondary" className="chooseButton"
+                            onClick={this.getRandomCountry}
+                        >
+                            Play Again</Button></div>
                 }
             </div>
         )

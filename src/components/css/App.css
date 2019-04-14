@@ -99,14 +99,14 @@ margin:10px;
 }
 .win {
   text-align: center;
-  margin: 10px;
-  font-size: 5rem;
+  font-size: 30px;
   letter-spacing: 3px;
-  color: rgba(38, 204, 102, 0.849);
+  color: rgba(38,204,102,.849);
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   line-height: 1.5;
-  
-
+  position: relative;
+  top: 150px;
 }
 @media screen and (max-width:700px){
   [class^="col-"]{
@@ -245,3 +245,5 @@ footer {
         transform: rotate(-180deg);
     }
 }
+
+
