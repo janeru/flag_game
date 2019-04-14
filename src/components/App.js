@@ -1,7 +1,7 @@
 import React from 'react';
-import '../compoents/css/App.css';
-import NationOption from '../compoents/NationOption';
-import Header from '../compoents/header';
+import '../components/css/App.css';
+import NationOption from '../components/NationOption';
+import Header from '../components/header';
 
 const App = () => (
   <div>
