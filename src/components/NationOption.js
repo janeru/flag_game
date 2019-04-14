@@ -39,6 +39,9 @@ const NationOption = class extends React.Component {
 
             })
     }
+    reStart = () => {
+        location.reload();
+    }
 
     getRandomCountry = () => {
 
@@ -251,7 +254,7 @@ const NationOption = class extends React.Component {
                     <div className="win">
                         Congratulations!
                         <Button variant="contained" color="secondary" className="chooseButton"
-                            onClick={this.getRandomCountry}
+                            onClick={this.reStart}
                         >
                             Play Again</Button></div>
                 }
