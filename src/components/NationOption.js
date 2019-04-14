@@ -40,7 +40,7 @@ const NationOption = class extends React.Component {
             })
     }
     reStart = () => {
-        location.reload();
+        window.location.reload();
     }
 
     getRandomCountry = () => {
